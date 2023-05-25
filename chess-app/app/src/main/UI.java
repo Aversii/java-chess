@@ -1,4 +1,4 @@
-package main;
+ package main;
 
 import chess.ChessPiece;
 
@@ -21,7 +21,7 @@ public class UI {
             System.out.print("-");
         }
         else{
-            System.out.println(piece);
+            System.out.print(piece);
         }
         System.out.print(" ");
     }
