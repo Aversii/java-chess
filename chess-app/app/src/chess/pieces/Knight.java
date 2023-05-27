@@ -16,4 +16,10 @@ public class Knight extends ChessPiece {
         return "H";
     }
     
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRow()][getBoard().getRow()];
+        return mat;
+    }
+    
 }

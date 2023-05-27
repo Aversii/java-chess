@@ -14,7 +14,7 @@ public class ChessMatch {
 
     private Board board;
 
-    
+
     public ChessMatch(){
         board = new Board(8, 8);
         initialSetup();
@@ -41,6 +41,12 @@ public class ChessMatch {
     private void validateSourcePosition(Position position){
         if(!board.thereIsAPiece(position)){
             throw new ChessException("there is no piece on source position");
+        }
+        if(!board.piece(position).isThereAnypossibleMove())
+            throw new ChessException("there is no possible moves at choosen piece");
+
+        {
+
         }
     }
 
