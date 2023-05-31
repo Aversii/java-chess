@@ -69,7 +69,7 @@ public class ChessMatch {
     private void initialSetup() {
 
         //TEST PIECE MOVE SETUP    
-        placeNewPiece('d', 5, new Queen(board, Color.WHITE));//TESTEd PIECE
+        placeNewPiece('d', 5, new King(board, Color.WHITE));//TESTEd PIECE
 
         placeNewPiece('b', 3, new Rook(board, Color.BLACK));
         placeNewPiece('b', 4, new Rook(board, Color.BLACK));
