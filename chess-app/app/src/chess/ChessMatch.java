@@ -75,7 +75,7 @@ public class ChessMatch {
     private void initialSetup() {
 
         //TEST PIECE MOVE SETUP    
-/*         placeNewPiece('d', 5, new Pawn(board, Color.BLACK));//TESTEd PIECE
+        placeNewPiece('d', 5, new Knight(board, Color.BLACK));//TESTEd PIECE
 
         placeNewPiece('b', 3, new Rook(board, Color.WHITE));
         placeNewPiece('b', 4, new Rook(board, Color.WHITE));
@@ -93,10 +93,10 @@ public class ChessMatch {
         placeNewPiece('d', 3, new Rook(board, Color.WHITE));
         placeNewPiece('e', 3, new Rook(board, Color.WHITE));
         placeNewPiece('d', 7, new Rook(board, Color.WHITE));
-        placeNewPiece('e', 7, new Rook(board, Color.WHITE)); */
+        placeNewPiece('e', 7, new Rook(board, Color.WHITE)); 
     
 
-//ORIGINAL SETUP
+/* //ORIGINAL SETUP
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));
         placeNewPiece('b', 1, new Knight(board, Color.WHITE));
         placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
@@ -129,6 +129,6 @@ public class ChessMatch {
         placeNewPiece('e', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('f', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('h', 7, new Pawn(board, Color.BLACK)); 
+        placeNewPiece('h', 7, new Pawn(board, Color.BLACK));  */
     }
 }
