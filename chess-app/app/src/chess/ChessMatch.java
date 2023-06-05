@@ -201,7 +201,7 @@ public class ChessMatch {
 
     private void initialSetup() {
 
-        //CHECKMATE TEST SETUP
+/*         //CHECKMATE TEST SETUP
 
         placeNewPiece('h', 7, new Rook(board, Color.WHITE));
         placeNewPiece('d', 1, new Rook(board, Color.WHITE));
@@ -210,7 +210,7 @@ public class ChessMatch {
         placeNewPiece('b', 8, new King(board, Color.BLACK));
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
 
-
+ */
 
         //TEST PIECE MOVE SETUP    
 /*         placeNewPiece('d', 5, new Pawn(board, Color.BLACK));//TESTEd PIECE
@@ -234,7 +234,7 @@ public class ChessMatch {
         placeNewPiece('e', 7, new Rook(board, Color.WHITE)); */
     
 
-/* //ORIGINAL SETUP
+ //ORIGINAL SETUP
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));
         placeNewPiece('b', 1, new Knight(board, Color.WHITE));
         placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
@@ -267,6 +267,6 @@ public class ChessMatch {
         placeNewPiece('e', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('f', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
-        placeNewPiece('h', 7, new Pawn(board, Color.BLACK));  */
+        placeNewPiece('h', 7, new Pawn(board, Color.BLACK));  
     }
 }
