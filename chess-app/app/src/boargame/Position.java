@@ -35,6 +35,4 @@ public class Position {
         this.row = row;
         this.column=column;
     }
-
-
 }

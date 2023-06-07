@@ -1,11 +1,8 @@
 package main;
-
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -17,7 +14,6 @@ public class App {
         Scanner sc = new Scanner(System.in);
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
-
         
             while(!chessMatch.getCheckMate()) {
 
@@ -45,7 +41,11 @@ public class App {
 
                     if(chessMatch.getPromoted()!=null){
                         System.out.println("Enter piece for promotion (B/H/R/Q)");
-                        String type = sc.nextLine();
+                        String type = sc.nextLine().toUpperCase();
+                        while(!type.equals("R") && !type.equals("B") && !type.equals("H") && !type.equals("Q") ){
+                            System.out.print("Enter a valid piece for promotion (B/H/R/Q)");
+                            type = sc.nextLine().toUpperCase();
+                        }
                         chessMatch.replacePromotedPiece(type);
                     }
                     
@@ -58,10 +58,8 @@ public class App {
                     System.out.println(e.getMessage());
                     System.out.println("press enter to continue");
                     sc.nextLine();
-                }
-                
-        
-        }
+                }             
+            }   
         UI.clearScreen();
         UI.printMatch(chessMatch, captured);
     }

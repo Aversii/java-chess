@@ -73,9 +73,5 @@ public class Board {
         aux.position = null;
         pieces[position.getRow()][position.getColumn()] = null;
         return aux;
-    }
-
-
-    
-    
+    }      
 }

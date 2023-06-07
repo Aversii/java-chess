@@ -30,7 +30,7 @@ public class Pawn extends ChessPiece {
         Position auxPosition = new Position(0, 0);
 
 
-        // white pawn move and diagonals captures
+        // WHITE PAWN MOVE AND DIAGONAL CAPTURES
         if (getColor() == Color.WHITE){
             auxPosition.setValues(position.getRow() - 1, position.getColumn()); 
             if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
@@ -44,7 +44,6 @@ public class Pawn extends ChessPiece {
 
             }
 
-
             auxPosition.setValues(position.getRow() - 1, position.getColumn()-1); 
             if (getBoard().positionExists(auxPosition) && isThereOpponentPiece(auxPosition)) {
                 mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -55,7 +54,7 @@ public class Pawn extends ChessPiece {
                 mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
             }
             
-            //SPECIAL MOVE EN PASSANT
+        //SPECIAL MOVE EN PASSANT
         if(position.getRow() == 3 ){
             Position left = new Position(position.getRow(), position.getColumn() -1);
             if(getBoard().positionExists(left) && isThereOpponentPiece(left) && getBoard().piece(left)==chessMatch.getEnPassantVunerable()){
@@ -69,7 +68,7 @@ public class Pawn extends ChessPiece {
         }
     }
 
-        // black pawn move and diagonals captures
+        // BLACK PAWN MOVE AND DIAGONAL CAPTURES
         if (getColor() == Color.BLACK){
             auxPosition.setValues(position.getRow() + 1, position.getColumn()); 
             if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {

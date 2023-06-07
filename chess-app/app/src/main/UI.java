@@ -1,11 +1,10 @@
- package main;
+package main;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
 import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
@@ -58,11 +57,8 @@ public class UI {
             System.out.println("GG! WINNER IS: " + chessMatch.getCurrentPlayer());
         }
 
-    }
-
+    }  
     
-    
-
     public static void printBoard(ChessPiece[][] pieces){
         for (int i = 0; i<pieces.length; i++){
             System.out.print((8-i)+ " ");
@@ -120,8 +116,6 @@ public class UI {
         System.out.print(ANSI_PURPLE);
         System.out.println("black: ");
         System.out.println(Arrays.toString(black.toArray()));
-        System.out.print(ANSI_RESET);
-
-        
+        System.out.print(ANSI_RESET);        
     }   
 }

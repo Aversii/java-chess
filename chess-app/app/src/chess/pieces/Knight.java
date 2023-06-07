@@ -12,7 +12,6 @@ public class Knight extends ChessPiece {
     }
 
     @Override
-
     public String toString(){
         return "H";
     }
@@ -22,7 +21,7 @@ public class Knight extends ChessPiece {
         boolean[][] mat = new boolean[getBoard().getRow()][getBoard().getRow()];
         Position auxPosition = new Position(0,0);
 
-                // up left and up right moves
+                //TOP LEFT AND RIGHT MOVES. 
                 auxPosition.setValues(position.getRow() - 2, position.getColumn()-1);
                 if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -43,7 +42,7 @@ public class Knight extends ChessPiece {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
                 }
 
-                // down left and down right moves
+                //BOTTOM LEFT AND RIGHT MOVES.
                 auxPosition.setValues(position.getRow() + 2, position.getColumn()-1);
                 if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -64,7 +63,7 @@ public class Knight extends ChessPiece {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
                 } 
                 
-                // left up and left down moves
+                // LEFT UP AND BOTTOM MOVES.
                 auxPosition.setValues(position.getRow() -1, position.getColumn() -2);
                 if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -85,7 +84,7 @@ public class Knight extends ChessPiece {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
                 }
                 
-                // right up and right down moves
+                // RIGHT UP AND BOTTOM MOVES.
                 auxPosition.setValues(position.getRow() -1, position.getColumn() +2);
                 if (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -106,6 +105,5 @@ public class Knight extends ChessPiece {
                     mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
                 }                
         return mat;
-    }
-    
+    }    
 }

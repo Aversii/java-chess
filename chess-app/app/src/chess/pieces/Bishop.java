@@ -22,8 +22,7 @@ public class Bishop extends ChessPiece {
 
         Position auxPosition = new Position(0, 0);
 
-        // diagonal up-left moves
-
+        // DIAGONAL TOP-LEFT MOVES.
         auxPosition.setValues(position.getRow() - 1, position.getColumn()-1);
         while (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -36,8 +35,7 @@ public class Bishop extends ChessPiece {
         }
 
 
-        // diagonal up-right moves
-
+        // DIAGONAL TOP-RIGHT MOVES.
         auxPosition.setValues(position.getRow() - 1, position.getColumn()+  1);
         while (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -49,8 +47,7 @@ public class Bishop extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }        
 
-        // diagonal bottom-right moves
-
+        // DIAGONAL BOTTOM-LEFT MOVES.
         auxPosition.setValues(position.getRow() + 1, position.getColumn()+1);
         while (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -63,8 +60,7 @@ public class Bishop extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // diagonal bottom-left moves
-        
+        // DIAGONAL BOTTOM-RIGHT MOVES.        
         auxPosition.setValues(position.getRow() + 1, position.getColumn()-1);
         while (getBoard().positionExists(auxPosition) && !getBoard().thereIsAPiece(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;

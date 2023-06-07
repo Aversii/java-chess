@@ -10,7 +10,6 @@ public class King extends ChessPiece {
 
     private ChessMatch chessMatch;
 
-
     public King(Board board, Color color, ChessMatch chessMatch) {
         super(board, color);
         this.chessMatch = chessMatch;
@@ -36,7 +35,7 @@ public class King extends ChessPiece {
         boolean[][] mat = new boolean[getBoard().getRow()][getBoard().getRow()];
         Position auxPosition = new Position(0, 0);
 
-        // above moves
+        // TOP MOVE.
         auxPosition.setValues(position.getRow() - 1, position.getColumn());
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -47,7 +46,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // down moves
+        // BOTTOM MOVE.
         auxPosition.setValues(position.getRow() +  1, position.getColumn());
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -58,7 +57,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // left moves
+        // LEFT MOVE
         auxPosition.setValues(position.getRow(), position.getColumn() - 1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -69,7 +68,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // right moves
+        // RIGHT MOVE
         auxPosition.setValues(position.getRow(), position.getColumn() + 1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -80,8 +79,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // diagonal up-left moves
-
+        // DIAGONAL TOP-LEFT MOVE.
         auxPosition.setValues(position.getRow() - 1, position.getColumn()-1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -92,8 +90,7 @@ public class King extends ChessPiece {
         }
 
 
-        // diagonal up-right moves
-
+        // DIAGONAL TOP-RIGHT MOVE.
         auxPosition.setValues(position.getRow() - 1, position.getColumn()+  1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -103,8 +100,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }        
 
-        // diagonal bottom-right moves
-
+        //DIAGONAL BOTTOM-RIGHT MOVE.
         auxPosition.setValues(position.getRow() + 1, position.getColumn()+1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -115,8 +111,7 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        // diagonal bottom-left moves
-        
+        // DIAGONAL BOTTOM-LEFT MOVE        
         auxPosition.setValues(position.getRow() + 1, position.getColumn()-1);
         if (getBoard().positionExists(auxPosition) && canMove(auxPosition)) {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
@@ -127,11 +122,10 @@ public class King extends ChessPiece {
             mat[auxPosition.getRow()][auxPosition.getColumn()] = true;
         }
 
-        //Castling
-
+        //CASTLING.
         if(getMoveCount()==0 && !chessMatch.getCheck()){
-            //king side castling
-
+            
+            //KING SIDE CASTLING.
             Position positionR1 = new Position(position.getRow(), position.getColumn()+3);
             if(canCastling(positionR1)){
                 Position p1 = new Position(position.getRow(), position.getColumn()+1);
@@ -141,20 +135,17 @@ public class King extends ChessPiece {
                 }
             }
 
-            //Queen side castling
-
+            //QUEEN SIDE CASTLING.
             Position positionR2 = new Position(position.getRow(), position.getColumn()-4);
             if(canCastling(positionR2)){
                 Position p1 = new Position(position.getRow(), position.getColumn()-1);
                 Position p2 = new Position(position.getRow(), position.getColumn()-2);
                 Position p3 = new Position(position.getRow(), position.getColumn()-3);
-
-
                 if(getBoard().piece(p1)==null && getBoard().piece(p2) == null && getBoard().piece(p3)==null){
                     mat[position.getRow()][position.getColumn()-2] = true;
                 }
             }
         }        
-        return mat;
+    return mat;
     }     
 }
