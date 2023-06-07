@@ -4,7 +4,7 @@ Be welcome to a relaxing chess match to play on console.
 
 ## WHAT IS?
 
-A chessmatch developed during profesor Nélio Alves classes using pure java and POO.
+A chessmatch developed during professor Nélio Alves classes using pure java and POO.
 
 ## HOW TO RUN?
 
