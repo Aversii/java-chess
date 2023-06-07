@@ -1,4 +1,4 @@
-## JAVA CHESS!
+## JAVA CHESS! :chess_pawn:
 
 Be welcome to a relaxing chess match to play on console.
 
